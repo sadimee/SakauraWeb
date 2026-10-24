@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#fff7fb" />
+  <title>Sakura ♡ — Your sweet Discord companion</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <div class="petals" aria-hidden="true"><span>✿</span><span>❀</span><span>✿</span><span>❀</span><span>✿</span></div>
+  <header class="topbar wrap">
+    <a class="brand" href="#home"><span class="brand-icon">✿</span> Sakura<span class="brand-dot">.</span></a>
+    <nav id="nav"><a href="#features">Features</a><a href="#commands">Commands</a><a href="#shop">Shop</a><a href="#playground">Playground</a></nav>
+    <div class="header-actions"><a class="small-link" href="#commands">Explore ↗</a><button class="mobile-menu" id="menuBtn" aria-label="Toggle menu">☰</button></div>
+  </header>
+
+  <main>
+    <section class="hero wrap" id="home">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="live-dot"></span> YOUR DISCORD COMPANION <span class="flower">✿</span></div>
+        <h1>A little magic,<br><em>a lot of</em> <span>love.</span></h1>
+        <p>Meet <strong>Sakura</strong> — your soft pink Discord bot for friendships, adorable marriages, fun moments and a little bit of everyday magic.</p>
+        <div class="hero-buttons"><a class="btn primary" href="#playground">Try Sakura <span>↗</span></a><a class="btn outline" href="#commands">View commands <span>↓</span></a></div>
+        <div class="hero-note"><span class="avatars">🌸 💗 ✨</span><span>Made for cozy communities & sweet memories</span></div>
+      </div>
+      <div class="hero-art"><div class="art-glow"></div><div class="art-frame"><img src="assets/sakura-girl.webp" alt="Pink-haired Sakura anime girl with a white cat" /><div class="art-label">✿ Welcome to my little world ♡</div></div><div class="floating-note note-one">♡ so lovely!</div><div class="floating-note note-two">✿ blossom with us</div><span class="art-star star-one">✧</span><span class="art-star star-two">✿</span></div>
+    </section>
+
+    <section class="stats wrap"><div><strong>♡</strong><span>Made with love</span></div><div><strong>40+</strong><span>Fun commands</span></div><div><strong>24/7</strong><span>Cozy vibes*</span></div><div><strong>✿</strong><span>One Sakura</span></div></section>
+
+    <section class="section wrap" id="features"><div class="section-heading"><span class="kicker">✿ THE LITTLE THINGS</span><h2>Everything feels <em>sweeter</em> with Sakura.</h2><p>From a simple hug to a forever promise, Sakura makes your server feel like home.</p></div>
+      <div class="features-grid">
+        <article class="feature-card feature-love"><div class="feature-photo"><img src="assets/sakura-couple.webp" alt="Anime couple under cherry blossoms" /></div><div class="feature-body"><span class="pill">💍 MARRIAGE</span><h3>Love, officially.</h3><p>Propose, get married, check your marriage state, and celebrate your special date.</p><span class="feature-code">/marry · /marrystate</span></div></article>
+        <article class="feature-card"><div class="feature-icon">💌</div><span class="pill">SOCIAL</span><h3>Little gestures.</h3><p>Send a hug, a kiss or a little pat to someone who makes your day brighter.</p><span class="feature-code">/hug · /kiss · /pat</span></article>
+        <article class="feature-card"><div class="feature-icon">🪙</div><span class="pill">ECONOMY</span><h3>Earn & collect.</h3><p>Work, claim daily coins, save your earnings and collect adorable shop items.</p><span class="feature-code">/daily · /work · /shop</span></article>
+      </div>
+    </section>
+
+    <section class="section commands-section" id="commands"><div class="wrap"><div class="section-heading"><span class="kicker">♡ ALL THE MAGIC</span><h2>Pick a <em>command.</em></h2><p>Discover Sakura's commands — just type them in your Discord server.</p></div><div class="command-tabs" role="tablist" aria-label="Command categories"><button class="tab active" data-cat="marriage">💍 Marriage</button><button class="tab" data-cat="social">💗 Social</button><button class="tab" data-cat="economy">🪙 Economy</button><button class="tab" data-cat="fun">🎲 Fun</button><button class="tab" data-cat="utility">✨ Utility</button></div><div class="command-list" id="commandList"></div><p class="commands-hint">✿ Sakura supports <strong>/ slash commands</strong> and <strong>+ prefix commands</strong> in the bot project.</p></div></section>
+
+    <section class="section wrap" id="shop"><div class="section-heading"><span class="kicker">🛍️ LITTLE TREASURES</span><h2>Welcome to <em>Sakura Shop.</em></h2><p>Earn coins and treat yourself — or save up for something special.</p></div><div class="shop-grid" id="shopGrid"></div><div class="earn-strip"><div><span class="earn-icon">🪙</span><div><strong>Need more coins?</strong><p>Use <code>/daily</code> for 500 coins every 24 hours, or <code>/work</code> for 100–400 coins every hour.</p></div></div><a href="#playground" class="btn primary">Try the demo ↗</a></div></section>
+
+    <section class="section playground-section" id="playground"><div class="wrap"><div class="section-heading"><span class="kicker">✿ JUST FOR FUN</span><h2>A little <em>preview.</em></h2><p>Play with a simulated Sakura interface — no Discord login needed.</p></div><div class="play-grid"><div class="demo-controls"><div class="mini-label">♡ YOUR LITTLE WALLET</div><div class="coin-total"><span>🪙</span><strong id="coinAmount">500</strong><small>demo coins</small></div><div class="demo-buttons"><button class="btn primary" id="dailyBtn">🎁 Claim daily +500</button><button class="btn outline" id="workBtn">🧁 Work & earn</button></div><div class="demo-divider"></div><div class="mini-label">💍 MARRIAGE DEMO</div><label class="input-label" for="partnerName">Your partner's name</label><input id="partnerName" maxlength="32" placeholder="e.g. Moonlight" /><button class="btn outline full" id="marryBtn">💗 Propose</button><button class="text-button" id="resetBtn">Reset demo ↺</button></div><div class="discord-preview"><div class="preview-header"><span class="sakura-avatar">✿</span><div><strong>Sakura <span class="bot-badge">BOT</span></strong><small>Today at 4:20 PM</small></div></div><div class="preview-card"><div class="preview-pink-line"></div><div class="preview-text"><span class="mini-label">✿ SAKURA'S LITTLE WORLD</span><h3 id="previewTitle">Welcome, sweetheart! ♡</h3><p id="previewText">Try the buttons on the left to see Sakura's adorable replies.</p></div><img id="previewImage" src="assets/sakura-girl.webp" alt="Sakura character" /></div><div class="preview-footer">✿ This is a website demo, not connected to your Discord bot.</div></div></div></div></section>
+  </main>
+  <footer class="footer wrap"><div><a class="brand" href="#home"><span class="brand-icon">✿</span> Sakura<span class="brand-dot">.</span></a><p>A little sweetness for every server. ♡</p></div><div class="footer-links"><a href="#features">Features</a><a href="#commands">Commands</a><a href="#shop">Shop</a></div><span class="copyright">Made with ♡ and cherry blossoms · Sakura</span></footer>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body></html>
