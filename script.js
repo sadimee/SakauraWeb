@@ -20,4 +20,26 @@ document.querySelector('#dailyBtn').addEventListener('click',()=>{if(claimed){to
 document.querySelector('#workBtn').addEventListener('click',()=>{const amount=100+Math.floor(Math.random()*301);coins+=amount;update();preview('Lovely work! ✿',`You earned ${amount} demo coins. Sakura is proud of you!`);toast(`+${amount} coins ♡`)});
 document.querySelector('#marryBtn').addEventListener('click',()=>{const name=document.querySelector('#partnerName').value.trim();if(!name){toast('Write your partner’s name first ♡');return}if(married){toast('You are already married in this demo ♡');return}married=true;preview('Just Married! 💍',`You ♡ ${name} — Together, under the cherry blossoms. Congratulations!`,'sakura-couple');toast('A beautiful new story begins ✿')});
 document.querySelector('#resetBtn').addEventListener('click',()=>{coins=500;claimed=false;married=false;document.querySelector('#partnerName').value='';update();preview('Welcome, sweetheart! ♡','Try the buttons on the left to see Sakura’s adorable replies.');toast('Demo reset ✿')});
-document.querySelector('#menuBtn').addEventListener('click',()=>{document.querySelector('#nav').classList.toggle('open')});document.querySelectorAll('#nav a').forEach(a=>a.addEventListener('click',()=>document.querySelector('#nav').classList.remove('open')));
+const menuBtn=document.querySelector('#menuBtn'), nav=document.querySelector('#nav');
+menuBtn.addEventListener('click',()=>{const opened=nav.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(opened));});
+document.querySelectorAll('#nav a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');}));
+
+/* Accessible theme switcher; saves the visitor's choice on this device. */
+(() => {
+  const root=document.documentElement,toggle=document.querySelector('#themeToggle');
+  if(!toggle)return;
+  const icon=toggle.querySelector('.theme-icon'),label=toggle.querySelector('.theme-label'),meta=document.querySelector('#themeColorMeta');
+  let saved=null;try{saved=localStorage.getItem('sakura-theme')}catch(_){}
+  const systemDark=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches;
+  function applyTheme(theme){
+    root.dataset.theme=theme;const dark=theme==='dark';
+    if(icon)icon.textContent=dark?'☀':'☾';
+    if(label)label.textContent=dark?'Light mode':'Dark mode';
+    toggle.setAttribute('aria-label',dark?'Switch to light mode':'Switch to dark mode');
+    toggle.setAttribute('aria-pressed',String(dark));
+    if(meta)meta.setAttribute('content',dark?'#17121a':'#fff7fb');
+    try{localStorage.setItem('sakura-theme',theme)}catch(_){}
+  }
+  applyTheme(saved||(systemDark?'dark':'light'));
+  toggle.addEventListener('click',()=>applyTheme(root.dataset.theme==='dark'?'light':'dark'));
+})();

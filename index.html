@@ -3,17 +3,26 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="theme-color" content="#fff7fb" />
-  <title>Sakura ♡ — Your sweet Discord companion</title>
+  <meta name="theme-color" content="#fff7fb" id="themeColorMeta" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="description" content="Sakura — a sweet, playful Discord companion for cozy communities." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="alternate icon" href="favicon.svg" />
+  <title>Sakura — Your sweet Discord companion</title>
   <link rel="stylesheet" href="style.css" />
   <script defer src="script.js"></script>
 </head>
 <body>
+  <a class="skip-link" href="#home">Skip to content</a>
   <div class="petals" aria-hidden="true"><span>✿</span><span>❀</span><span>✿</span><span>❀</span><span>✿</span></div>
   <header class="topbar wrap">
     <a class="brand" href="#home"><span class="brand-icon">✿</span> Sakura<span class="brand-dot">.</span></a>
     <nav id="nav"><a href="#features">Features</a><a href="#commands">Commands</a><a href="#shop">Shop</a><a href="#playground">Playground</a></nav>
-    <div class="header-actions"><a class="small-link" href="#commands">Explore ↗</a><button class="mobile-menu" id="menuBtn" aria-label="Toggle menu">☰</button></div>
+    <div class="header-actions">
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode" title="Switch theme"><span class="theme-icon" aria-hidden="true">☾</span><span class="theme-label">Dark mode</span></button>
+      <a class="small-link" href="#commands">Explore ↗</a>
+      <button class="mobile-menu" id="menuBtn" aria-label="Toggle menu" aria-expanded="false">☰</button>
+    </div>
   </header>
 
   <main>
